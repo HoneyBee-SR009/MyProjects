@@ -1,0 +1,22 @@
+
+.product-background{
+			background: url(/assets/images/sven-scheuermeier-4R1YpmGO52I-unsplash.jpg) no-repeat center fixed;
+            background-size: cover;
+            text-align: center;
+}
+
+.h3-margin{
+    margin-bottom: 3rem!important;
+}
+
+
+.row-margin{
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+}
+
+.combo-style{
+    padding-bottom: 3rem!important;
+}
+
+

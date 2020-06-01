@@ -1,0 +1,76 @@
+<div class="agileinfo-ads-display col-md-12" >
+    <div class="wrapper">
+        <div class="row" >
+            <div class="agileinfo-ads-display col-md-3">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="agileinfo-ads-display col-lg-9" style="background-color: white; border-radius: 6px;" >
+                <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
+                    <h3 class="text-center ">Vegetables</h3>
+                
+                    <div class="row" >
+                        <div class="col-md-3 product-men mt-5" *ngFor = "let data of products">
+                            <div class="men-pro-item simpleCart_shelfItem">
+                                <!-- <div class="men-thumb-item text-center">
+                                    <img style="height:150px;width:150px;" src="" alt="">
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="item-info-product text-center border-top border-right border-left mt-4">
+                                    <h4 class="pt-1">
+                                        <a routerLink="" ><img class="img-style" src="{{data.imageUrl}}">
+                                </a>
+                                    </h4>
+                                    <div class="info-product-price my-2">
+                                        <span class="item_price">Rs {{data.price}}</span>&nbsp;
+                                        <del>Rs. 45</del> 
+                                    </div>
+
+                                    <div class="info-product-price my-2">
+                                        <span class="item_price">{{data.name}}</span>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                                        <form action="" method="post">
+                                        <select name="quantity" id="">
+                                            <option disabled>Choose Quantity</option>
+                                            <option value="1">1kg</option>
+                                            <option value="2">2kg</option>
+                                            <option value="3">3kg</option>
+                                        </select>
+                                        <br>
+                                        <br>
+                                    
+                                            <fieldset>
+                                                    
+                                                <a class="button btn btcolr"  (click)="handleAddToCart(data);">
+                                                Add <img src="assets/images/shopping-basket.png" alt=""></a>
+                                                
+                
+                                
+                                                <!-- <input type="submit" name="submit" value="Add to cart" class="button btn" /> -->
+                                    
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+
+
+        
+
+        

@@ -1,0 +1,235 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.header{
+	min-height: 80px;
+	background: #f09;
+}
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #f00;
+    background-color: transparent;
+}
+.navbar-default {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    top: 8px;
+}
+.header {
+    min-height: 70px;
+    background: #000;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #f00;
+    background-color: transparent;
+}
+
+ /*---=============================--footer--========================-*/
+ .footer{
+ 	padding: 5px 0px;
+    background-color: #000;
+    min-height: 60px;
+    position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	text-align: center;
+ }
+ .foot-tx h1{
+ 	color: #fff;
+ 	text-align: center;
+ 	font-size: 17px;
+    position: relative;
+    top: 5px;
+    font-family: 'Merriweather', serif;
+ }
+ /*---=============================--footer--========================-*/
+
+ .table-change-status2 {
+    background: #f5f5f5;
+    padding: 152px 0px;
+}
+.table-change-status2 h4 {
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    color: #f78e21;
+}
+ /*---=====================--gallery--========================-*/
+
+.gallery {
+    padding: 86px 0px;
+    background-color: #efefef;
+    min-height: 200px;
+}
+.space{
+	margin-top: -62px;
+}
+ /*---=====================--gallery--========================-*/
+
+
+    *[role="form"] {
+    max-width: 643px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background: rgba(255,255,255,0.9);
+}
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 1; /* Firefox */
+}
+    
+    
+    .card-header{
+          margin: 0 auto;
+    width: 48%;
+    /* margin: 20px 0px; */
+    margin-top: 32px;
+    font-size: 25px;
+}
+    
+    
+    
+    
+    
+  .regis {
+     background: url('../lorem2/images/con-im.jpeg') fixed;
+    background-size: cover;
+    background-color:  coral;
+}
+
+
+*[role="form"] h2 { 
+       font-family: 'Open Sans' , sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+    
+    
+    .regis{
+      background-color: coral;
+      /*background-image: url(images/con-im.jpeg);*/
+      padding: 19px;
+      background-attachment: fixed;
+      background-color: #ddd;
+      padding: 100px 0px;
+    }
+    .regsub{
+      width: 20%;
+      margin: 0 auto;
+          color: #fff;
+    background-color: #f78e21;
+    border-color: #f76a07;
+    }
+    /*----------login---------------*/
+     .panel-default {
+    border-color: #ddd;
+    margin: 180px 0px;
+}
+.carou-back {
+    background: #ccccccd1;
+}
+.carou-back h6 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    color: #f78e21;
+    /* margin: 10px 0px; */
+    position: relative;
+    /* top: 29px; */
+}
+ /*----------login---------------*/
+
+ .table-change-status {
+    background: #f5f5f5;
+    padding: 100px 0px;
+}
+.table-change-status h4 {
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    color: #f00;
+}
+
+ @media(min-width: 320px) and (max-width: 480px){
+
+
+    .navbar-default h1 {
+        font-size: 13px;
+        }
+
+   .table-change-status2 {
+ 
+    padding: 33px 0px;
+}
+
+}
+
+@media(min-width: 481px) and (max-width: 767px){
+
+.table-change-status2 {
+    /* background: #f5f5f5; */
+    padding: 30px 0px;
+}
+
+.navbar-default h1{
+  font-size: 13px;
+}
+
+}
+
+@media(min-width: 768px) and (max-width: 998px){
+
+
+.navbar-default h1 {
+    font-size: 13px;
+  }
+.navbar-default .navbar-nav>li>a {
+   
+    font-size: 10px;
+   
+   
+}
+.table-change-status2 {
+   
+    padding: 35px 0px;
+}
+}
+body {
+    
+    background-color: #151414;
+}
+.footer {
+  /* position: fixed;*/
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #000;
+   color: white;
+   text-align: center;
+}
+.headerbrandname
+{
+  font-size: 17px;
+  margin-top: -4px;
+  color: #fff;
+}
+
+.status {
+    background-color: #fff;
+}

@@ -1,0 +1,188 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css"; 
+
+
+body {
+  margin: 0;
+  font-family: none;
+  /* background: url(assets/images/par/allfruits.jpg) no-repeat center fixed; */
+  background-size: cover;
+  text-align: center;
+ 
+}
+
+h3.heading-tittle{
+  color: black;
+  font-size: 32px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.19);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+  }
+
+
+.btnstyle{
+    background-color: white;
+    color: darkseagreen;
+}
+
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 0px;
+  border-top-left-radius: calc(.3rem - 1px);
+  border-top-right-radius: calc(.3rem - 1px);
+}
+
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .75rem;
+  border-top: 0px;
+  border-bottom-right-radius: calc(.3rem - 1px);
+  border-bottom-left-radius: calc(.3rem - 1px);
+}
+
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: darkseagreen;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.btcolr {
+  color:darkseagreen;
+  background: white;
+  font-weight: bold;
+  border-color: darkseagreen
+}
+
+a:not([href]) {
+  text-decoration: none;
+  color: darkseagreen;
+  cursor: pointer;
+}
+
+button, optgroup, select {
+  margin: 0;
+  font-family: inherit;
+  font-size: small;
+  line-height: inherit;
+  border-color: darkseagreen;
+  color: darkseagreen
+}
+
+.inputstyle {
+  font-family: inherit;
+  font-size: medium;
+  width: 332px;
+  line-height: inherit;
+}
+
+.modalinputstyle {
+  margin-left: 0px;
+  font-family: inherit;
+  font-size: medium;
+  width: 250px;
+  line-height: inherit;
+}
+
+
+.underline {
+  background-color: #fff;
+  border: none;
+  margin-bottom: 15px;
+  border-bottom: thin solid darkseagreen;
+}
+
+
+
+.checkout {
+  
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.addmore {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+.checkoutpage{
+  padding-top:25px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.body-main {
+  background: #ffffff;
+  border-bottom: 15px solid darkseagreen;
+  border-top: 15px solid darkseagreen;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 40px 30px !important;
+  position: relative;
+  box-shadow: 0 1px 21px #808080;
+  font-size: 10px
+}
+
+.main thead {
+  background: #1E1F23;
+  color: #fff
+}
+
+.img {
+  height: 100px
+}
+
+
+.product-carousel{
+  height: 150px;
+  width: 150px;
+}
+
+
+.img-style{
+  height: 145px;
+  width: 145px;
+}
+
+.col-md-4-style{
+  padding-right: 10px;
+  padding-left: 10px;
+}

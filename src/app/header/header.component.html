@@ -1,0 +1,177 @@
+
+
+  <nav class="navbar navbar-expand-lg">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+      aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+
+        <!-- Features -->
+        <li class="nav-item dropdown mega-dropdown ">
+          <a  class="nav-link dropdown-toggle dropdown-style " id="navbarDropdownMenuLink2" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Shop By Category
+            <span class="sr-only">(current)</span>
+          </a>
+          <div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-5 px-3" aria-labelledby="navbarDropdownMenuLink2">
+            <div class="row">
+              <div class="col-md-6 col-xl-3 sub-menu mb-xl-0 mb-4">
+                <h6 class="sub-title font-weight-bold">Category</h6>
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="menu-item pl-0 navcon" routerLink="/product">
+                      <i class="fa fa-caret-right pl-1 pr-3"></i>Vegetables
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item pl-0 navcon" href="#!">
+                      <i class="fa fa-caret-right pl-1 pr-3"></i>Grocery
+                    </a>
+                  </li>
+                  <li>
+                    <a class="menu-item pl-0 navcon" href="#!">
+                      <i class="fa fa-caret-right pl-1 pr-3"></i>Ready To Cook
+                    </a>
+                  </li>
+               
+               
+                </ul>
+              </div>
+             </div>
+          </div>
+        </li>
+     
+        
+
+      </ul>
+      <!-- Links -->
+
+      <!-- Search form -->
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <input class="form-control mr-sm-2 searchboxstyle" type="text" placeholder="Search Your Products" aria-label="Search">
+          <button class="btn btncolr"><fa-icon [icon]="faSearch" ></fa-icon></button></div>
+      </form>
+
+    </div>
+    <!-- Collapsible content -->
+
+  </nav>
+  
+  
+    <ul class="nav justify-content-end" style="background-color: rgb(147, 215, 0); margin-bottom: 50px;">
+      <li *ngIf="!user" class="nav-item ">
+        <a class="nav-link navcon" (click)="openSm(content)" routerLink="">Sign In 
+          <fa-icon [icon]="faUserPlus"></fa-icon></a>
+      </li>
+      
+      <li *ngIf="user" class="nav-item ">
+        <a class="nav-link navcon" (click)="signOut();">Sign out <fa-icon [icon]="faSignOutAlt"></fa-icon></a>
+      </li>
+      
+
+
+      <li class="nav-item " *ngIf="!hideCart();" >
+        <a class="nav-link navcon" (click)="openSm(contentmybag)" routerLink="">Bag 
+          <fa-icon [icon]="faShoppingBasket"></fa-icon><span ><strong class="addtocart">{{cartItems.length}}</strong></span></a>
+      </li>
+    
+      	<li class="nav-item ">
+			  <a class="nav-link navcon" routerLink="">More <fa-icon [icon]="faChevronCircleDown"></fa-icon></a>
+			</li>
+    </ul>
+
+        <ng-template #content let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Sign Up/Sign In Here</h4>
+            <button type="button" class="btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <img src="/assets/images/close_1.png" alt="">
+          </button>
+            
+          </div>
+          <div class="modal-body">
+            <div  *ngIf="success" class="alert alert-success">OTP Send To Your Mail. Please Check Your Mail.</div>
+            <div  class="alert alert-danger" *ngIf="error">Something Went Wrong.</div>
+            <div  class="alert alert-danger" *ngIf="invalidSignup">Enter Your Email Id.</div>
+  
+            <form *ngIf="!sendOtp" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <input class="modalinputstyle underline" type="email" formControlName="email" placeholder="Enter your email id" >
+              <br/>
+                <button class="btn btcolr" type="submit">Send OTP</button>
+            </form>
+
+            <form *ngIf="sendOtp" [formGroup]="sendOtpForm" (ngSubmit)="verifyOtp()">
+              <input class="modalinputstyle underline" type="text" formControlName="otp" placeholder="Enter OTP" >
+            <br/>
+              <button class="btn btcolr" type="submit">Verify OTP</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btcolr btn-block  btn-outline" (click)="signInWithGoogle('Google');" routerLink=""><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Login With Google</a>
+            <a class="btn btcolr btn-facebook btn-block" (click)="signIn('Facebook');"  style="margin-top: 4px;" routerLink=""><img src="assets/images/facebook.png"> Login With Facebook</a>
+              <div *ngIf="user">
+                <img src="{{ user.photoUrl }}">
+                <h4>{{ user.name }}</h4>
+                <p>{{ user.email }}</p>
+              </div>
+          </div>
+        </ng-template>
+        
+
+
+        <ng-template #contentmybag let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">In Your Bag</h4>
+            <button type="button" class="btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <a routerLink="/product"><img src="/assets/images/close_1.png" alt=""></a>
+          </button>
+            
+          </div>
+          <div class="modal-body" >
+            <div  class="alert alert-success" *ngIf="cartItems.length === 0">Your Cart is Empty.</div>
+            <div *ngIf="message" class="alert alert-success">{{message}}</div>
+
+              <ul class="list-group text-left" *ngIf="cartItems.length > 0">
+                <li class="list-group-item" *ngFor="let item of cartItems">
+                  <div class="cart-item" >
+
+
+                    <div class="row">
+                      <div class="col-md-9 text-left">
+                          <span><img style="height: 25px; width: 25px;"src="{{item.imageUrl}}" alt=""></span>
+                          <span>{{ item.productName }}</span>&nbsp;<span>{{ item.price }}</span> x <span>{{ item.qty }}</span><br/>
+                          <span><a (click)="qtydecrement(item);"><fa-icon [icon]="faMinus"></fa-icon></a></span> &nbsp;
+                          <span>{{ item.qty }}</span> &nbsp;
+                          <span><a (click)="qtyincrement(item);"><fa-icon [icon]="faPlus"></fa-icon></a></span><br/>
+                          <strong>{{ (item.qty * item.price) | currency:'INR' }}</strong>
+                      </div>
+                      <div class="col-md-3 text-right">
+                        <span><button (click)="removefromcart(item)" class=""><fa-icon [icon]="faTimes"></fa-icon></button></span>&nbsp;
+                      </div>
+                    </div>
+
+                  </div>
+                </li>
+              </ul>
+          </div>
+          
+          <div  class="modal-footer" *ngIf="cartItems.length>0">
+            
+
+            <div  class="row text-left">
+              <p ><strong>Total:</strong> {{ cartTotal | currency:'INR' }} </p>
+            </div>
+            <div class="row text-right">
+                <a class="button btn btcolr checkout" (click)="modal.dismiss('Cross click')" routerLink="/checkout">Checkout</a>
+                  
+            </div>
+           
+          </div>
+        </ng-template>
+

@@ -1,0 +1,72 @@
+.navcon{
+
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+
+}
+.dropdown:hover .dropdown-menu{    
+        display: block;
+
+}
+
+.dropdown-style{
+        color: #495057;
+    margin-left: 11px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #ced4da;
+    border-radius: 6px;
+
+}
+
+
+.modal-footer>* {
+        margin: auto;
+    }
+
+.searchboxstyle {
+        margin: 0;
+        font-family: serif;
+        font-size: inherit;
+        line-height: inherit; 
+        border-radius: 6px;  
+    }
+
+
+.addtocart {
+        position: absolute;
+        color: white;
+        background-color: rgb(106, 208, 0);
+        right: 103px;
+        top: 57px;
+        border-radius: 50%;
+        white-space: nowrap;
+        text-align: center;
+        line-height: 18px;
+        padding: 0 6px;
+        height: 18px;
+
+}
+
+.checkout {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin-top: -15px;
+    }
+
+
+   
+
+
+      
+
+  
+    
+  
+
+
+
+    

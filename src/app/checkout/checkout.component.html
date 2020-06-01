@@ -1,0 +1,156 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="checkoutpage ">
+                <div class="container">
+                    <div class="row center">
+                        <div class="body-main">
+                            <div class="col-md-12">
+                                <div class="row ">
+                                    <div class="col-md-4"> <img class="img" alt="Invoce Template" src="assets/images/c.png" /> </div>
+                                    <div class="col-md-8 text-right">
+                                        <h4 style="color: black;"><strong>In Your Bag</strong></h4>
+                                        <p>221 ,Baker Street</p>
+                                        <p>1800-234-124</p>
+                                        <p>example@gmail.com</p>
+                                    </div>
+                                </div> <br />
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <a class="button btn btcolr addmore" routerLink="/product">Add More</a>
+                                    </div>
+                                </div> <br/>
+                                
+                                    <div  class="alert alert-success" *ngIf="cartItems.length === 0">Your Cart is Empty.</div>
+
+                                        <ul class="list-group text-left" *ngIf="cartItems.length > 0">
+                                            <li class="list-group-item" *ngFor="let item of cartItems">
+                                            <div class="cart-item" >
+                                                
+                                            <div class="row">
+                                                <div class="col-md-9 text-left">
+                                                    <span><img style="height: 25px; width: 25px;"src="{{item.imageUrl}}" alt=""></span>&nbsp;
+                                                    <span>{{ item.productName }}</span>&nbsp;<span>{{ item.price }}</span> x <span>{{ item.qty }}</span><br/>
+                                                    <span><a (click)="qtydecrement(item);"><fa-icon [icon]="faMinus"></fa-icon></a></span> &nbsp;
+                                                    <span>{{ item.qty }}</span> &nbsp;
+                                                    <span><a (click)="qtyincrement(item);"><fa-icon [icon]="faPlus"></fa-icon></a></span><br/>
+                                                    <strong>{{ (item.qty * item.price) | currency:'INR' }}</strong>
+                                                </div>
+                                                <div class="col-md-3 text-right">
+                                                    <span><button (click)="removefromcart(item)" class=""><fa-icon [icon]="faTimes"></fa-icon></button></span>&nbsp;
+                                                </div>
+                                            </div>
+                                                
+                                                
+                                                
+                                            </div>
+                                            </li>
+                                        </ul>
+                            
+                                
+                                    <div class="col-md-12 total-style" *ngIf="cartItems.length>0">
+                                        <div style="margin-bottom: 4px;" *ngIf="message" class="row alert alert-success">{{message}}</div>
+                                        
+                                        <div  class="row">
+                                                <h5 class="col-md-9 text-left "><strong>Total:</strong>  {{ cartTotal | currency:'INR' }}</h5>
+                                                <!-- <a class="col-md-3 button btn btcolr checkout text-right" (click)="modal.dismiss('Cross click')" routerLink="/checkout">Checkout</a> -->
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="checkoutpage">
+                <div class="container">
+                    <div class="row center">
+                        <div class="body-main ">
+                            <div class="col-md-12 ">
+                                <div class="row ">
+                                    <div class="col-md-4"> <img class="img" alt="Invoce Template" src="assets/images/c.png" /> </div>
+                                    <div class="col-md-8 text-right">
+                                        <h4 style="color: black;"><strong>Billing Details</strong></h4>
+                                        <p>221 ,Baker Street</p>
+                                        <p>1800-234-124</p>
+                                        <p>example@gmail.com</p>
+                                    </div>
+                                </div> <br />
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h2>INVOICE</h2>
+                                        <h5>04854654101</h5>
+                                    </div>
+                                </div> <br />
+                                <div class=" text-center">
+                                    <table class="table ">
+                                        <thead >
+                                            <tr class="">
+                                                <th >
+                                                    <h5 class="text-left">Items</h5>
+                                                </th>
+                                                <th >
+                                                    <h5 class="text-right">Amount</h5>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody >
+                                         
+                                            <tr *ngFor="let data of cartItems" class="">
+                                                <td class="text-left">{{data.productName}}</td>
+                                                <td class="text-right"><i class="fas fa-rupee-sign" area-hidden="true"></i> {{(data.price*data.qty) | currency:'INR'}}&nbsp;</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-right">
+                                                    <p> <strong>Shipment and Taxes:</strong> </p>
+                                                    <p> <strong>Total Amount: </strong> </p>
+                                                    <p> <strong>Discount: </strong> </p>
+                                                    <p> <strong>Payable Amount: </strong> </p>
+                                                </td>
+                                                <td class="text-right">
+                                                    <p> <strong><i class="fas fa-rupee-sign" area-hidden="true"></i> 5% </strong> </p>
+                                                    <p> <strong><i class="fas fa-rupee-sign" area-hidden="true"></i> {{ cartTotal | currency:'INR' }}</strong> </p>
+                                                    <p> <strong><i class="fas fa-rupee-sign" area-hidden="true"></i> {{0.00 | currency:'INR'}} </strong> </p>
+                                                    <p> <strong><i class="fas fa-rupee-sign" area-hidden="true"></i> {{ cartTotal | currency:'INR' }}</strong> </p>
+                                                </td>
+                                            </tr>
+                                        
+                                        
+                                            <tr style="color: black;" class="text-right">
+                                                <td class="">
+                                                    <h4><strong>Total:</strong></h4>
+                                                </td>
+                                                <td class="">
+                                                    <h4>{{ cartTotal | currency:'INR' }}</h4>
+                                                </td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6 text-left">
+                                                <p><b>Date: </b>6 June 2019</p>
+                                                <p><b>Signature: </b><i>Sayantani Rana</i></p>
+                                            </div>
+                                            <div class="col-md-6 text-right ">
+                                                <a class="button btn btcolr" style="display: inline-block;" routerLink="/address">Place Order</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
